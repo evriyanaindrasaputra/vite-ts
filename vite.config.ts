@@ -13,6 +13,9 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    coverage: {
+      provider: 'istanbul',
+    },
     reporters: 'dot',
     setupFiles: [resolve(__dirname, 'vitest.setup.ts')],
   },
