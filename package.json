@@ -8,8 +8,13 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "test": "vitest",
-    "test:cov": "vitest run --coverage"
+    "start:e2e": "vite --port 3000",
+    "test": "is-ci-cli test:coverage test:watch",
+    "test:watch": "vitest",
+    "test:verbose": "vitest --reporter=verbose",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show report"
   },
   "dependencies": {
     "vue": "^3.2.37"
@@ -18,6 +23,8 @@
     "@antfu/eslint-config": "^0.27.0",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@playwright-testing-library/test": "^4.5.0",
+    "@playwright/test": "^1.27.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/vue": "^6.6.1",
     "@types/prettier": "^2.7.1",
@@ -25,7 +32,6 @@
     "@typescript-eslint/parser": "^5.40.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "@vitest/coverage-c8": "^0.24.1",
-    "@vitest/coverage-istanbul": "^0.24.1",
     "autoprefixer": "^10.4.12",
     "c8": "^7.12.0",
     "eslint": "^8.25.0",
@@ -33,6 +39,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.6.0",
     "husky": "^8.0.1",
+    "is-ci-cli": "^2.2.0",
     "jsdom": "^20.0.1",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.17",

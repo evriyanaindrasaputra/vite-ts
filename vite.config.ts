@@ -11,12 +11,22 @@ export default defineConfig({
     },
   },
   test: {
+    alias: { '~': './src' },
+    include: ['**/*.test.ts{,x}'],
+    coverage: {
+      // Coverage reporters
+      all: true,
+      include: ['src/**/*.ts{,x}'],
+      exclude: ['src/*.ts{,x}', '**/*.test.ts{,x}'],
+
+      // Coverage thresholds
+      statements: 0,
+      branches: 0,
+      functions: 0,
+      lines: 0,
+    },
     globals: true,
     environment: 'jsdom',
-    coverage: {
-      provider: 'istanbul',
-    },
-    reporters: 'dot',
     setupFiles: [resolve(__dirname, 'vitest.setup.ts')],
   },
 })
