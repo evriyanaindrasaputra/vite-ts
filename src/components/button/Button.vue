@@ -66,8 +66,7 @@ const classNames = computed(() => {
   * default style variant
   */
   &--solid {
-    @apply hover: border
-    border-solid text-white shadow-lg focus:shadow-none active:shadow-none;
+    @apply hover: border border-solid text-white shadow-lg focus:shadow-none active:shadow-none;
 
     &.btn {
       &--primary {
