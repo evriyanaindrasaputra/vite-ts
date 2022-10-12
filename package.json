@@ -17,7 +17,8 @@
     "test:e2e:report": "playwright show report"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",

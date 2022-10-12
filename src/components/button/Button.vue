@@ -43,7 +43,7 @@ const classNames = computed(() => {
 
 <style lang="postcss" scoped>
 .btn {
-  @apply disabled: pointer-events-none inline-flex font-medium disabled:opacity-50;
+  @apply inline-flex font-medium disabled:pointer-events-none disabled:opacity-50;
 
   /*
   * Button has 3 different sizing
@@ -66,11 +66,11 @@ const classNames = computed(() => {
   * default style variant
   */
   &--solid {
-    @apply hover: border border-solid text-white shadow-lg focus:shadow-none active:shadow-none;
+    @apply border border-solid text-white hover:shadow-lg focus:shadow-none active:shadow-none;
 
     &.btn {
       &--primary {
-        @apply hover: bg-blue-600 focus:bg-blue-700 active:bg-blue-700;
+        @apply bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 active:bg-blue-700;
       }
     }
   }
