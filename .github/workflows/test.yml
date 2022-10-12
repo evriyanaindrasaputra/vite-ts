@@ -1,5 +1,4 @@
 name: 🧪 unit test
-run-name: ${{ github.actor }} is testing out push activity 🚀
 on:
   push:
     branches: [main]
