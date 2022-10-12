@@ -16,8 +16,14 @@ export default defineConfig({
     coverage: {
       // Coverage reporters
       all: true,
-      include: ['src/**/*.ts{,x}'],
-      exclude: ['src/*.ts{,x}', '**/*.test.ts{,x}'],
+      include: ['**/*.test.ts', '**/*.vue'],
+      // exclude: [
+      // '**/*.spec.ts',
+      // 'vitest.setup.ts',
+      // '**/*.js',
+      // '**/*.config.*',
+      // 'e2e/**',
+      // ],
 
       // Coverage thresholds
       statements: 0,
