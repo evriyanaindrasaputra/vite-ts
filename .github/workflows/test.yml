@@ -1,0 +1,29 @@
+name: 🧪 unit test
+run-name: ${{ github.actor }} is testing out push activity 🚀
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, reopened, synchronize]
+jobs:
+  unit-test:
+    name: 🧪 Unit and integration test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🐑 Clone repository
+        uses: actions/checkout@v3
+
+      - name: 🦀 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: ⛓ Install Node deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🧪 Run unit and integration tests
+        run: npm run test
+        env:
+          CI: true
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
