@@ -26,14 +26,11 @@ const { variant, color, size } = withDefaults(defineProps<Props>(), {
 const classNames = computed(() => {
   const result: string[] = ['btn']
 
-  if (color)
-    result.push(`btn--${color}`)
+  color && result.push(`btn--${color}`)
 
-  if (variant)
-    result.push(`btn--${variant}`)
+  variant && result.push(`btn--${variant}`)
 
-  if (size)
-    result.push(`btn--${size}`)
+  size && result.push(`btn--${size}`)
   return result
 })
 </script>
@@ -46,7 +43,7 @@ const classNames = computed(() => {
 
 <style lang="postcss" scoped>
 .btn {
-  @apply inline-flex font-medium disabled:pointer-events-none disabled:opacity-50;
+  @apply disabled: pointer-events-none inline-flex font-medium disabled:opacity-50;
 
   /*
   * Button has 3 different sizing
@@ -69,11 +66,13 @@ const classNames = computed(() => {
   * default style variant
   */
   &--solid {
-    @apply border border-solid text-white hover:shadow-lg focus:shadow-none active:shadow-none;
+    @apply hover: border border-solid text-white shadow-lg focus:shadow-none active:shadow-none;
 
     &.btn {
       &--primary {
-        @apply bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 active:bg-blue-700;
+        @apply hover: bg-blue-600
+        focus:bg-blue-700
+         active:bg-blue-700;
       }
     }
   }

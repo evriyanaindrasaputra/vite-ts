@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [120],
+  "editor.tabSize": 2,
+  "eslint.validate": ["javascript", "typescript"],
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "prettier.enable": true,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "postcss", "vue"]
+}
